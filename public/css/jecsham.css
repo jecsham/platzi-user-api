@@ -1,0 +1,48 @@
+/* .j-debug{
+    border: 1px solid red;  
+} */
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.j-bg {
+    background-color: #fbfbfb;
+}
+
+.j-hero {
+    height: 100vh;
+}
+
+.j-hero-card {
+    max-width: 500px;
+    animation: animIn 1s ease-out;
+}
+
+.j-img-card {
+    background-image: url('../img/jecsham.jpg');
+    background-size: 75px 75px;
+    width: 75px;
+    height: 75px;
+    background-repeat: no-repeat
+}
+
+.j-a:hover {
+    text-decoration: none;
+}
+
+.j-dropdown-item:hover {
+    background: #007bff;
+    color: white;
+}
+
+@keyframes animIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

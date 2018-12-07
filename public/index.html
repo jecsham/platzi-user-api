@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap Grid CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Jecsham CSS -->
+    <link rel="stylesheet" href="/css/jecsham.css">
+    <!-- Material Desing Icons CSS -->
+    <link href="/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+    <!-- highlightjs -->
+    <link rel="stylesheet" href="/css/github.css">
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>Platzi User API</title>
+</head>
+
+<body class="j-bg">
+    <main id="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="my-5 text-center font-weight-bold">Platzi User API</h1>
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Advertencia:</strong> Esto es un proyecto personal y no oficial.
+                    </div>
+                    <p>Los datos del usuario son cosumidos por primera vez desde platzi.com, luego son guardados en una
+                        base de datos para que las próximas peticiones se consuman desde ahí. Dichos datos son
+                        actualizados
+                        si han pasado 24 horas desde la última actualización, en la próxima petición del usuario.</p>
+                    <h5>Límites de petición</h5>
+                    <p>Actualmente el sistema está capado a 200 peticiones por minuto, por IP.</p>
+                    <h4>Método: getUserSummary</h4>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">GET</span>
+                        </div>
+                        <input type="text" class="form-control" value="/api/v1/getUserSummary/@<Username>" readonly>
+                    </div>
+                    <h5>Descripción</h5>
+                    <p>Obtiene todos los <a href="#data-info">datos de un usuario</a>, que incluye:
+                        <ul>
+                            <li>Redes sociales</li>
+                            <li>Carreras aprovadas</li>
+                            <li>Cursos aprovados</li>
+                            <li>Aportes</li>
+                            <li>Nombre de usuario</li>
+                            <li>Nombre</li>
+                            <li>Avatar</li>
+                            <li>Descripción de biografía</li>
+                            <li>Bandera</li>
+                            <li>Platzi rank</li>
+                            <li>URL del perfil</li>
+                            <li>Página web del usuario</li>
+                        </ul>
+                    </p>
+                    <h5>Respuesta</h5>
+                    <p><code>/api/v1/getUserSummary/@jecsham</code></p>
+                    <pre>
+                    <code class="JSON">
+{
+    "status": {
+        "error": false,
+        "code": 200
+    },
+    "userData": {
+        "socials": [
+            {
+                "type": "twitter",
+                "id": "311586158"
+            }
+        ],
+        "careers": [
+            {
+                "id": 42,
+                "title": "Arquitectura Frontend",
+                "logo": "https://static.platzi.com/media/career-banner/badge-arquitecto-frontend.png",
+                "golden_achievement": "https://static.platzi.com/media/achievements/Golden-badge-arquitecto-front.png",
+                "diploma_link": "/@jecsham/carrera/42-arquitecto/diploma/detalle/",
+                "active": true
+            },
+            {
+                "id": 56,
+                "title": "Fundamentos de Programación",
+                "logo": "https://static.platzi.com/media/career-banner/badge-carrera-fundamentos.png",
+                "golden_achievement": "https://static.platzi.com/media/achievements/golden-badge-carrera-fundamentos-5ca96131-7819-4349-be68-90edc3a7ee09.png",
+                "diploma_link": "/@jecsham/carrera/56-fundamentos-programacion/diploma/detalle/",
+                "active": true
+            }
+        ],
+        "courses": [
+            {
+                "id": 1380,
+                "title": "Curso Básico de Node.js",
+                "badge": "https://static.platzi.com/media/achievements/badge-basico-nodejs-331c5be0-b49a-4f8c-9263-900e61b95479.png",
+                "url": "/clases/basico-nodejs/",
+                "career": "Desarrollo con JavaScript",
+                "deprecated": false,
+                "diploma_link": "/@jecsham/curso/1380-basico-nodejs/diploma/detalle/"
+            },
+            {
+                "id": 1189,
+                "title": "Curso de Algoritmos con C",
+                "badge": "https://static.platzi.com/media/achievements/badge-algoritmos-ad65b237-2c3f-4921-9f5f-8e9d0ce24f15.png",
+                "url": "/clases/algoritmos/",
+                "career": "Fundamentos de Programación",
+                "deprecated": false,
+                "diploma_link": "/@jecsham/curso/1189-algoritmos/diploma/detalle/"
+            },
+            {
+                "id": 1103,
+                "title": "Curso de Animaciones para la Web",
+                "badge": "https://static.platzi.com/media/achievements/badge-animaciones-para-web.png",
+                "url": "/clases/animaciones-web/",
+                "career": "Arquitectura Frontend",
+                "deprecated": false,
+                "diploma_link": "/@jecsham/curso/1103-animaciones-web/diploma/detalle/"
+            },
+
+            ...
+
+        ],
+        "contributions": [
+            {
+                "id": 2765,
+                "title": "Compilando C/C++ desde Visual Studio Code | Windows 10",
+                "created_at": "2018-08-17T09:38:09.840322Z",
+                "n_stars": 5,
+                "n_responses": 3,
+                "detail_url": "/tutoriales/1189-algoritmos/2765-compilando-cc-desde-visual-studio-code-windows-10/",
+                "course_name": "Curso de Algoritmos con C"
+            },
+            {
+                "id": 2860,
+                "title": "Solución 2 a \"javac\" no se reconoce el comando | Windows 10",
+                "created_at": "2018-09-13T16:37:19.470377Z",
+                "n_stars": 2,
+                "n_responses": 1,
+                "detail_url": "/tutoriales/1222-java-basico/2860-solucion-2-a-javac-no-se-reconoce-el-comando-windows-10/",
+                "course_name": "Curso Básico de Java SE"
+            }
+        ],
+        "username": "jecsham",
+        "avatar": "https://static.platzi.com/media/avatars/avatars/jecsham_00455714-2a56-4444-a531-492a5f863eb6.png",
+        "description": "Fullstack Developer",
+        "flag": "https://static.platzi.com/media/flags/PA.png",
+        "last_update": "2018-12-06T16:00:02.144Z",
+        "name": "Jecsham Castillo",
+        "platzi_rank": "6.723",
+        "profile_url": "https://platzi.com/@jecsham/",
+        "website": ""
+    }
+}
+                    </code>
+                    </pre>
+                    <section id="data-info">
+                        <h5 class="mb-3">Valores obtenidos de <code>status</code></h5>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Key</th>
+                                        <th scope="col">Descripción del valor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>error</td>
+                                        <td>Indica si huvo error en la petición</td>
+                                    </tr>
+                                    <tr>
+                                        <td>code</td>
+                                        <td>Código de error. <a href="#error-codes">Ver referencia</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h5 class="mb-3">Valores obtenidos de <code>userData</code> </h5>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Key</th>
+                                        <th scope="col">Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>socials</td>
+                                        <td>Redes sociales del usuario. <code>type</code> es la red social, <code>id</code>
+                                            es el identificador único del usuario en la red social</td>
+                                    </tr>
+                                    <tr>
+                                        <td>careers</td>
+                                        <td>Carreras aprovadas del usuario. <code>id</code> es el identificador único
+                                            de la
+                                            carrera, <code>title</code> es el nombre de la carrera, <code>logo</code>
+                                            es la URL del logo de la carrera, <code>golden_achievement</code> es la URL
+                                            del icono gold de la carrera, <code>diploma_link</code> es la URL del
+                                            diploma, <code>active</code> indica si la carrera está activa</td>
+                                    </tr>
+                                    <tr>
+                                        <td>courses</td>
+                                        <td>Cursos aprovados del usuario. <code>id</code> es el identificador único del
+                                            curso,
+                                            <code>title</code> es el nombre del curso, <code>badge</code> es
+                                            la URL del logo del curso, <code>url</code> es la URL del curso, <code>career</code>
+                                            es el nombre de la carrera principal a la que pertenece el curso, <code>deprecated</code>
+                                            indica si el curso ya ha vencido, <code>diplema_link</code> es la URL del
+                                            diploma
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>contributions</td>
+                                        <td>Aportes del usuario. <code>id</code>es el identificador único del aporte,
+                                            <code>title</code> es el nombre del aporte, <code>created_at</code> es la
+                                            fecha de creación del aporte, <code>n_stars</code> es el total de votos del
+                                            aporte, <code>n_responses</code> es el total de comentarios del aporte,
+                                            <code>detail_url</code> es la URL del aporte, <code>course_name</code> es
+                                            el curso donde fue publicado el aporte
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>username</td>
+                                        <td>Nombre de usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td>avatar</td>
+                                        <td>URL del avatar del usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td>flag</td>
+                                        <td>URL de la bandera del usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td>last_update</td>
+                                        <td>Fecha de la última actualización de datos de ese perfil en nuestra base de
+                                            datos</td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>Nombre del usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td>platzi_rank</td>
+                                        <td>Puntos de Platzi del usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td>profile_url</td>
+                                        <td>URL del perfil de Platzi del usuario</td>
+                                    </tr>
+                                    <tr>
+                                        <td>website</td>
+                                        <td>URL de la página web del usuario</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section id="error-codes">
+                            <h5 class="mb-3">Códigos de error</h5>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Código</th>
+                                            <th scope="col">Descripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>200</td>
+                                            <td>Petición exitosa</td>
+                                        </tr>
+                                        <tr>
+                                            <td>404</td>
+                                            <td>Usuario no encontrado o perfil privado</td>
+                                        </tr>
+                                        <tr>
+                                            <td>500</td>
+                                            <td>Error interno del servidor</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                    </section>
+                    <section id="footer" class="col-12 my-5">
+                        <div class="d-flex justify-content-center align-content-end">
+                            <small class="font-weight-light">Coded with 💚 for Platzi Community</small>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Global JavaScript -->
+    <script src="js/global.js"></script>
+</body>
+
+</html>
