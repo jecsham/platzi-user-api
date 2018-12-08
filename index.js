@@ -6,7 +6,7 @@ app.enable("trust proxy")
 app.use(express.static('public'))
 const apiLimiter = rateLimit({
     windowMs: 1 * 60 * 1000,
-    max: 5,
+    max: 200,
     handler: (req, res) => {
         let status = {
             error: true,

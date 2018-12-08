@@ -1,5 +1,5 @@
 const assert = require('assert')
-const apiv1 = require('../controllers/api_v1')
+const apiv1 = require('../lib/api_v1')
 describe('API V1', function () {
     describe('#scrapePlatziUser()', function () {
         it('should return "Jecsham Castillo" with the param "@jecsham"', async function () {
