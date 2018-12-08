@@ -186,7 +186,7 @@
                                     </tr>
                                     <tr>
                                         <td>code</td>
-                                        <td>Código de error. <a href="#error-codes">Ver referencia</a></td>
+                                        <td>Código de estado. <a href="#error-codes">Ver referencia</a></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -274,26 +274,40 @@
                         </div>
                     </section>
                     <section id="error-codes">
-                        <h5 class="mb-3">Códigos de error</h5>
+                        <h5 class="mb-3">Códigos de estado</h5>
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th scope="col">Código</th>
+                                        <th scope="col">Error</th>
                                         <th scope="col">Descripción</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>200</td>
+                                        <td>false</td>
                                         <td>Petición exitosa</td>
                                     </tr>
                                     <tr>
+                                        <td>403</td>
+                                        <td>true</td>
+                                        <td>Perfil privado</td>
+                                    </tr>
+                                    <tr>
                                         <td>404</td>
-                                        <td>Usuario no encontrado o perfil privado</td>
+                                        <td>true</td>
+                                        <td>Usuario no encontrado</td>
+                                    </tr>
+                                    <tr>
+                                        <td>429</td>
+                                        <td>true</td>
+                                        <td>Límite de solicitudes excedido (max. 200 por minuto)</td>
                                     </tr>
                                     <tr>
                                         <td>500</td>
+                                        <td>true</td>
                                         <td>Error interno del servidor</td>
                                     </tr>
                                 </tbody>

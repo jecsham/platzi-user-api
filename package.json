@@ -4,7 +4,8 @@
   "description": "Unofficial API RESTful for Platzi user",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 15000"
+    "test": "mocha --timeout 15000",
+    "dev": "nodemon index.js"
   },
   "keywords": [
     "platzi",
@@ -22,6 +23,7 @@
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.7"
   }
 }
