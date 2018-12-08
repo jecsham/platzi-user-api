@@ -144,7 +144,7 @@ let getUserSummary = async (user) => {
 }
 
 module.exports = {
-    scrapePlatziUser: scrapePlatziUser,
-    insertOrUpdateUser: insertOrUpdateUser,
-    getUserSummary: getUserSummary
+    scrapePlatziUser,
+    insertOrUpdateUser,
+    getUserSummary
 }

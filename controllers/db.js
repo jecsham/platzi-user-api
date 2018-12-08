@@ -30,5 +30,5 @@ const api_v1_UserSchema = new mongoose.Schema({
 const api_v1_User = mongoose.model('API_v1_User', api_v1_UserSchema);
 
 module.exports = {
-    api_v1_User: api_v1_User
+    api_v1_User
 }
