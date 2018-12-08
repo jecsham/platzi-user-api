@@ -33,6 +33,7 @@
                         base de datos para que las próximas peticiones se consuman desde ahí. Dichos datos son
                         actualizados
                         si han pasado 24 horas desde la última actualización, en la próxima petición del usuario.</p>
+                    <p>Live example en mi <a href="https://jecsham.com/">página web</a></p>
                     <h5>Límites de petición</h5>
                     <p>Actualmente el sistema está capado a 200 peticiones por minuto, por IP.</p>
                     <h4>Método: getUserSummary</h4>
@@ -60,7 +61,7 @@
                         </ul>
                     </p>
                     <h5>Respuesta</h5>
-                    <p><code>/api/v1/getUserSummary/@jecsham</code></p>
+                    <p><code>https://platzi-user-api.jecsham.com/api/v1/getUserSummary/@jecsham</code></p>
                     <pre>
                     <code class="JSON">
 {
@@ -263,34 +264,35 @@
                         </div>
                     </section>
                     <section id="error-codes">
-                            <h5 class="mb-3">Códigos de error</h5>
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Código</th>
-                                            <th scope="col">Descripción</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>200</td>
-                                            <td>Petición exitosa</td>
-                                        </tr>
-                                        <tr>
-                                            <td>404</td>
-                                            <td>Usuario no encontrado o perfil privado</td>
-                                        </tr>
-                                        <tr>
-                                            <td>500</td>
-                                            <td>Error interno del servidor</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                        <h5 class="mb-3">Códigos de error</h5>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>200</td>
+                                        <td>Petición exitosa</td>
+                                    </tr>
+                                    <tr>
+                                        <td>404</td>
+                                        <td>Usuario no encontrado o perfil privado</td>
+                                    </tr>
+                                    <tr>
+                                        <td>500</td>
+                                        <td>Error interno del servidor</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
-                    <section id="footer" class="col-12 my-5">
-                        <div class="d-flex justify-content-center align-content-end">
+                    <section id="footer" class="col-12 my-5 p-0">
+                        <div class="d-flex">
+                            <small class="font-weight-light mr-auto">Te gustaría apoyar el proyecto? <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XT96C9TPKR8NC&source=url">Click aquí</a></small>
                             <small class="font-weight-light">Coded with 💚 for Platzi Community</small>
                         </div>
                     </section>
