@@ -14,6 +14,10 @@ body {
     height: 100vh;
 }
 
+.j-title {
+    color: #1c3643;
+}
+
 .j-hero-card {
     max-width: 500px;
     animation: animIn 1s ease-out;
@@ -29,20 +33,4 @@ body {
 
 .j-a:hover {
     text-decoration: none;
-}
-
-.j-dropdown-item:hover {
-    background: #007bff;
-    color: white;
-}
-
-@keyframes animIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-200px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
 }
