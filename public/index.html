@@ -34,7 +34,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="my-5 text-center font-weight-bold">Platzi User API</h1>
+                    <p class="my-5 text-center font-weight-bold display-3">Platzi User API</p>
                     <div class="alert alert-warning" role="alert">
                         <strong>Advertencia:</strong> Este proyecto no es oficial.
                     </div>
@@ -42,16 +42,22 @@
                         puede tardar unos segundos), luego son guardados en una
                         base de datos para que las próximas peticiones se consuman desde ahí. Dichos datos son
                         actualizados
-                        si han pasado 24 horas desde la última actualización, en la próxima petición del usuario.</p>
+                        si han pasado 24 horas desde la última actualización, en la próxima petición del usuario.
+                    </p>
                     <p>Live example en mi <a href="https://jecsham.com/" target="_blank">página web</a></p>
-                    <h5>Límites de petición</h5>
-                    <p>Actualmente el sistema está capado a 200 peticiones por minuto, por IP.</p>
-                    <h4>Método: getUserSummary</h4>
+                    <h5>Información del servidor</h5>
+                    <p>
+                        <ul>
+                            <li>Límite de 200 peticiones por minuto</li>
+                            <li>Caché de 10 minutos</li>
+                        </ul>
+                    </p>
+                    <h5>Endpoint getUserSummary</h5>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">GET</span>
                         </div>
-                        <input type="text" class="form-control" value="/api/v1/getUserSummary/@<Username>" readonly>
+                        <input type="text" class="form-control" value="/api/v1/getUserSummary/@<username>" readonly>
                     </div>
                     <h5>Descripción</h5>
                     <p>Obtiene todos los <a href="#data-info">datos de un usuario</a>, que incluye:
