@@ -21,7 +21,8 @@
     "express-rate-limit": "^3.3.2",
     "mongoose": "^5.3.14",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0",

@@ -52,32 +52,16 @@
                             <li>Caché de 10 minutos</li>
                         </ul>
                     </p>
-                    <h5>Endpoint getUserSummary</h5>
+                    <h4>getUserSummary - Obtener datos de usuario</h4>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">GET</span>
                         </div>
                         <input type="text" class="form-control" value="/api/v1/getUserSummary/@<username>" readonly>
                     </div>
-                    <h5>Descripción</h5>
-                    <p>Obtiene todos los <a href="#data-info">datos de un usuario</a>, que incluye:
-                        <ul>
-                            <li>Redes sociales</li>
-                            <li>Carreras aprovadas</li>
-                            <li>Cursos aprovados</li>
-                            <li>Aportes</li>
-                            <li>Nombre de usuario</li>
-                            <li>Nombre</li>
-                            <li>Avatar</li>
-                            <li>Descripción de biografía</li>
-                            <li>Bandera</li>
-                            <li>Platzi rank</li>
-                            <li>URL del perfil</li>
-                            <li>Página web del usuario</li>
-                        </ul>
-                    </p>
+                    <h5>Ejemplo de uso</h5>
+                    <p><code>curl -i https://platzi-user-api.jecsham.com/api/v1/getUserSummary/@jecsham</code></p>
                     <h5>Respuesta</h5>
-                    <p><code>https://platzi-user-api.jecsham.com/api/v1/getUserSummary/@jecsham</code></p>
                     <pre>
                     <code class="JSON">
 {
@@ -324,12 +308,13 @@
                         <h5 class="mb-3">¿Problemas?</h5>
                         <p><a href="https://twitter.com/jecsham" target="_blank">Tweet me</a> 📢</p>
                     </section>
+                    <hr>
                     <section id="footer" class="col-12 my-5 p-0">
                         <div class="d-flex">
                             <small class="font-weight-light mr-auto">¿Te gustaría apoyar el proyecto? <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XT96C9TPKR8NC&source=url"
                                     target="_blank">Click
                                     aquí</a></small>
-                            <small class="font-weight-light">Coded with 💚 for Platzi Community</small>
+                            <small class="font-weight-light">Creado con 💚 para la comunidad de Platzi</small>
                         </div>
                     </section>
                 </div>

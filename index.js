@@ -1,6 +1,8 @@
 const express = require("express")
 const apicache = require("apicache")
 const rateLimit = require("express-rate-limit")
+const favicon = require('serve-favicon')
+const path = require('path')
 require('dotenv').config()
 const app = express()
 app.enable("trust proxy")
@@ -17,12 +19,13 @@ const apiLimiter = rateLimit({
         res.header("Access-Control-Allow-Origin", "*")
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
         res.header("Content-Type", 'application/json')
-        res.send(JSON.stringify({ status, userData }, null, 4)).status()
+        res.send(JSON.stringify({ status, userData }, null, 4))
     }
 })
 let cache = apicache.middleware
 const onlyStatus200 = (req, res) => res.statusCode === 200
 const cacheSuccesses = cache('10 minutes', onlyStatus200)
+app.use(favicon(path.join(__dirname, 'public', 'assets/favicon.ico')))
 app.use("/api/", apiLimiter)
 app.use(cacheSuccesses)
 require('./routes')(app)
