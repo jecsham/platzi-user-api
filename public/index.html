@@ -34,7 +34,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                        <p class="my-5 text-center font-weight-bold display-3 j-title py-5">Platzi User API</p>
+                    <p class="my-5 text-center font-weight-bold display-3 j-title py-5">Platzi User API</p>
                     <div class="alert alert-warning" role="alert">
                         <strong>Advertencia:</strong> Este proyecto no es oficial.
                     </div>
@@ -126,6 +126,7 @@
             ...
 
         ],
+        "inactive_courses": [],
         "contributions": [
             {
                 "id": 2765,
@@ -211,8 +212,20 @@
                                             curso,
                                             <code>title</code> es el nombre del curso, <code>badge</code> es
                                             la URL del logo del curso, <code>url</code> es la URL del curso, <code>career</code>
-                                            es el nombre de la carrera principal a la que pertenece el curso, <code>deprecated</code>
-                                            indica si el curso ya ha vencido, <code>diplema_link</code> es la URL del
+                                            es el nombre de la carrera principal a la que pertenece el curso, <code>diploma_link</code>
+                                            es la URL del
+                                            diploma
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>inactive_courses</td>
+                                        <td>Cursos inactivos/obsoletos aprovados del usuario. <code>id</code> es el
+                                            identificador único del
+                                            curso,
+                                            <code>title</code> es el nombre del curso, <code>badge</code> es
+                                            la URL del logo del curso, <code>url</code> es la URL del curso, <code>career</code>
+                                            es el nombre de la carrera principal a la que pertenece el curso, <code>diploma_link</code>
+                                            es la URL del
                                             diploma
                                         </td>
                                     </tr>
