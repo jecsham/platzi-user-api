@@ -4,6 +4,7 @@
   "description": "Unofficial API RESTful for Platzi user",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha --timeout 15000",
     "dev": "nodemon index.js"
   },
