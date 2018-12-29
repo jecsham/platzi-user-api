@@ -3,7 +3,6 @@ const apicache = require("apicache")
 const rateLimit = require("express-rate-limit")
 const favicon = require('serve-favicon')
 const path = require('path')
-const http = require("http")
 require('dotenv').config()
 const app = express()
 app.enable("trust proxy")
@@ -30,9 +29,6 @@ app.use(favicon(path.join(__dirname, 'public', 'assets/favicon.ico')))
 app.use("/api/", apiLimiter)
 app.use(cacheSuccesses)
 require('./routes')(app)
-setInterval(() => {
-    http.get("https://platzi-user-api.jecsham.com");
-}, 900000)
 app.listen(process.env.PORT, () => {
     console.info("Server started")
 })
