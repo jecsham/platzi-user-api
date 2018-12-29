@@ -31,7 +31,7 @@ app.use("/api/", apiLimiter)
 app.use(cacheSuccesses)
 require('./routes')(app)
 setInterval(() => {
-    http.get("http://platzi-user-api.jecsham.com");
+    http.get("https://platzi-user-api.jecsham.com");
 }, 900000)
 app.listen(process.env.PORT, () => {
     console.info("Server started")
