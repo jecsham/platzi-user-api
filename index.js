@@ -29,6 +29,6 @@ app.use(favicon(path.join(__dirname, 'public', 'assets/favicon.ico')))
 app.use("/api/", apiLimiter)
 app.use(cacheSuccesses)
 require('./routes')(app)
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 80, () => {
     console.info("Server started")
 })
