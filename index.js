@@ -29,10 +29,6 @@ app.use(favicon(path.join(__dirname, 'public', 'assets/favicon.ico')))
 app.use("/api/", apiLimiter)
 app.use(cacheSuccesses)
 require('./routes')(app)
-const http = require("http");
-setInterval(() => {
-    http.get("https://google.com");
-}, 900000)
 app.listen(process.env.PORT, () => {
     console.info("Server started")
 })
