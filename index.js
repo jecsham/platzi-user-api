@@ -30,5 +30,5 @@ app.use("/api/", apiLimiter)
 app.use(cacheSuccesses)
 require('./routes')(app)
 app.listen(process.env.PORT || 80, () => {
-    console.info("Server started")
+    console.info("Server started "+process.env.TESTENV)
 })
