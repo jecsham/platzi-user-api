@@ -3,10 +3,12 @@ const apicache = require("apicache")
 const rateLimit = require("express-rate-limit")
 const favicon = require('serve-favicon')
 const path = require('path')
+var cors = require('cors')
 require('dotenv').config()
 const app = express()
 app.enable("trust proxy")
 app.use(express.static('public'))
+app.use(cors())
 const apiLimiter = rateLimit({
     windowMs: 1 * 60 * 1000,
     max: 200,
@@ -16,9 +18,6 @@ const apiLimiter = rateLimit({
             code: 429
         }
         let userData = {}
-        res.header("Access-Control-Allow-Origin", "*")
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-        res.header("Content-Type", 'application/json')
         res.send(JSON.stringify({ status, userData }, null, 4))
     }
 })
