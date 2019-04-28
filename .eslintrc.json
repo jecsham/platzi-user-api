@@ -29,6 +29,7 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "spaced-comment": ["error", "always", { "exceptions": ["-", "+"] }]
     }
 }

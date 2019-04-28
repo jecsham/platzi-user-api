@@ -1,14 +1,14 @@
-const express = require("express")
-const apicache = require("apicache")
-const rateLimit = require("express-rate-limit")
-const favicon = require('serve-favicon')
-const path = require('path')
-var cors = require('cors')
-require('dotenv').config()
-const app = express()
-app.enable("trust proxy")
-app.use(express.static('public'))
-app.use(cors())
+const express = require("express");
+const apicache = require("apicache");
+const rateLimit = require("express-rate-limit");
+const favicon = require("serve-favicon");
+const path = require("path");
+var cors = require("cors");
+require("dotenv").config();
+const app = express();
+app.enable("trust proxy");
+app.use(express.static("public"));
+app.use(cors());
 const apiLimiter = rateLimit({
     windowMs: 1 * 60 * 1000,
     max: 200,
@@ -16,18 +16,18 @@ const apiLimiter = rateLimit({
         let status = {
             error: true,
             code: 429
-        }
-        let userData = {}
-        res.send(JSON.stringify({ status, userData }, null, 4))
+        };
+        let userData = {};
+        res.send(JSON.stringify({ status, userData }, null, 4));
     }
-})
-let cache = apicache.middleware
-const onlyStatus200 = (req, res) => res.statusCode === 200
-const cacheSuccesses = cache('10 minutes', onlyStatus200)
-app.use(favicon(path.join(__dirname, 'public', 'assets/favicon.ico')))
-app.use("/api/", apiLimiter)
-app.use(cacheSuccesses)
-require('./routes')(app)
+});
+let cache = apicache.middleware;
+const onlyStatus200 = (req, res) => res.statusCode === 200;
+const cacheSuccesses = cache("10 minutes", onlyStatus200);
+app.use(favicon(path.join(__dirname, "public", "assets/favicon.ico")));
+app.use("/api/", apiLimiter);
+app.use(cacheSuccesses);
+require("./routes")(app);
 app.listen(process.env.PORT || 80, () => {
-    console.info("Server started "+process.env.TESTENV)
-})
+    // console.info("Server started " + process.env.TESTENV);
+});
