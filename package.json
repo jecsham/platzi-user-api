@@ -7,7 +7,8 @@
     "start": "node index.js",
     "test": "mocha --timeout 15000",
     "dev": "nodemon index.js",
-    "eslint": "eslint ./"
+    "eslint": "eslint ./",
+    "eslint:fix": "npm run eslint -- --fix"
   },
   "keywords": [
     "platzi",
