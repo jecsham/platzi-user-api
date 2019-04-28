@@ -1,4 +1,4 @@
 module.exports = (app) => {
-    require('./api')(app)
-    require('./home')(app)
-}
+    require("./api")(app);
+    require("./home")(app);
+};
