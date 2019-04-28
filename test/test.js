@@ -8,8 +8,8 @@ describe("API V1", function () {
         });
     });
     describe("#scrapePlatziUser() - private profile (403)", function () {
-        it("should return status code 403 with the param \"@rleonel\"", async function () {
-            let data = await apiv1.scrapePlatziUser("@rleonel");
+        it("should return status code 403 with the param \"@jcdevtest\"", async function () {
+            let data = await apiv1.scrapePlatziUser("@jcdevtest");
             assert.equal(data.status.code, 403);
         });
     });
