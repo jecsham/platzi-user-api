@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "mocha --timeout 15000",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "eslint": "eslint ./"
   },
   "keywords": [
     "platzi",
@@ -17,6 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "apicache": "^1.2.3",
+    "consola": "^2.6.0",
     "cors": "^2.8.5",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",

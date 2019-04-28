@@ -3,6 +3,7 @@ const apicache = require("apicache");
 const rateLimit = require("express-rate-limit");
 const favicon = require("serve-favicon");
 const path = require("path");
+const consola = require("consola");
 var cors = require("cors");
 require("dotenv").config();
 const app = express();
@@ -29,5 +30,5 @@ app.use("/api/", apiLimiter);
 app.use(cacheSuccesses);
 require("./routes")(app);
 app.listen(process.env.PORT || 80, () => {
-    // console.info("Server started " + process.env.TESTENV);
+    consola.info("Initializing server...");
 });
