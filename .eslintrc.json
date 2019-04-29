@@ -32,6 +32,17 @@
             "error",
             "always"
         ],
-        "spaced-comment": ["error", "always", { "exceptions": ["-", "+"] }]
+        "spaced-comment": [
+            "error",
+            "always",
+            {
+                "exceptions": [
+                    "-",
+                    "+"
+                ]
+            }
+        ],
+        "no-var": "error",
+        "prefer-const": "error"
     }
 }

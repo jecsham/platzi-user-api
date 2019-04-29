@@ -10,10 +10,10 @@ $("#yearsOld").text(myYearsOld(27, 11, 1997));
 
 // My Years Old Function 
 function myYearsOld(d, m, y) {
-    let initDate = new Date(`${y}-${m}-${d}`).getTime();
-    let date = new Date();
-    let dif = initDate - date;
-    let yearsOld = Math.abs((dif / (1000 * 60 * 60 * 24)) / 365);
+    const initDate = new Date(`${y}-${m}-${d}`).getTime();
+    const date = new Date();
+    const dif = initDate - date;
+    const yearsOld = Math.abs((dif / (1000 * 60 * 60 * 24)) / 365);
     
     return yearsOld.toFixed(1);
 }

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha --timeout 15000",
+    "test": "mocha --timeout 15000 --exit",
     "dev": "nodemon index.js",
     "eslint": "eslint ./",
     "eslint:fix": "npm run eslint -- --fix"
