@@ -65,7 +65,7 @@ $ npm run eslint && npm test
 Y si este se ejecuta sin errores, podrás hacerle push a tu respositorio remoto, y desde github podrás crear el Pull Request a ```jecsham/dev```
 
 ### Integración Continua
-Mientras esperas a que el pull request sea aceptado, Travis-CI correrá tests y lints del código, si esta falla, no te asustes. Puedes continuar agregando commits al pull hasta las builds pasen con éxito. Pero lo ideal sería ejecutar el comando anterior y eso te asegura que las pruebas pasarán :p
+Mientras esperas a que el Pull Request sea aceptado, Travis-CI creará builds con la finalidad de probar que el código funciona, si las builds fallan, no te asustes. Puedes continuar agregando commits al Pull Request hasta que las builds pasen con éxito. Pero lo ideal sería ejecutar el comando anterior para no tener problemas con Travis-CI :p
 
 ## Cursos recomendados
 * [Fundamentos de JavaScript](https://platzi.com/clases/fundamentos-javascript/)
