@@ -40,7 +40,12 @@ Una vez hayamos hecho fork del proyecto y lo tengamos clonado en local, seguimos
     ```sh
     $ npm test
     ``` 
-    (Este comando servirá para testear el proyecto y generar la base de datos ```platzi_api_userdata``` si esta no existe)
+    Este comando servirá para testear el proyecto y generar la base de datos ```platzi_api_userdata``` si esta no existe.
+* Para iniciar la instancia de Node.js, utiliza: 
+    ```sh
+    $ npm run dev
+    ```
+    Con este comando podrás hacer cambios sin tener que reiniciar el servidor.
 
 Adicionalmente utilizamos ```ESlint``` como linter, podremos usar los siguientes comandos:
 * Para ver errores de reglas del código:
