@@ -1,6 +1,16 @@
 language: node_js
 node_js:
   - "node"
-after_script:
+before_install:
+  - npm install eslint -g
+  - npm install eslint-config-standard -g
+  - npm install eslint-plugin-import -g
+  - npm install eslint-plugin-node -g
+  - npm install eslint-plugin-promise -g
+  - npm install eslint-plugin-standard -g
+install:
+  - npm install
+before_script:
   - "npm run eslint"
-  - "npm test"
+script:
+  - npm test
