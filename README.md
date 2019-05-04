@@ -1,6 +1,6 @@
 # Platzi User API
 
-<!-- [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger) -->
+[![Build Status](https://travis-ci.com/jecsham/platzi-user-api.svg?branch=master)](https://travis-ci.com/jecsham/platzi-user-api)
 
 Platzi User API es una API no oficial de Platzi para obtener tus cursos y carreras aprobadas, aportes y más.
 
