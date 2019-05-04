@@ -11,6 +11,6 @@ before_install:
 install:
   - npm install
 before_script:
-  - "npm run eslint"
+  - npm run eslint
 script:
   - npm test
