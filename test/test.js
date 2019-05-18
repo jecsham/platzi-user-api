@@ -1,6 +1,7 @@
 const assert = require("assert");
 const apiv1 = require("../lib/api_v1");
 describe("API V1", function () {
+    this.slow(7000);
     describe("#scrapePlatziUser()", function () {
         it("should return \"Jecsham Castillo\" with the param \"@jecsham\"", async function () {
             const data = await apiv1.scrapePlatziUser("@jecsham");
