@@ -23,7 +23,7 @@ Primero que todo, debemos tener:
 * [Node.js](https://nodejs.org/es/download/) 10.x (LTS)
 * [MongoDB](https://www.mongodb.com/download-center/community) 4.0
 
-Una vez hayamos hecho fork del proyecto y lo tengamos clonado en local, seguimos los siguientes pasos:
+Una vez hayamos hecho fork del proyecto y lo tengamos clonado e instalado en local, seguimos los siguientes pasos:
 * Crea una nueva branch con el nombre de tu usuario desde la branch ```dev```.
 * Inicia una instancia de MongoDB local o remoto.
 * En el root del proyecto, crea un archivo llamado ```.env``` con el siguiente contenido:
@@ -47,14 +47,14 @@ Una vez hayamos hecho fork del proyecto y lo tengamos clonado en local, seguimos
     ```
     Con este comando podrás hacer cambios sin tener que reiniciar el servidor.
 
-Adicionalmente utilizamos ```ESlint``` como linter, podremos usar los siguientes comandos:
+Adicionalmente utilizamos ```tslint``` como linter, podremos usar los siguientes comandos:
 * Para ver errores de reglas del código:
     ```sh
-    $ npm run eslint
+    $ npm run tslint
     ```
 * Para corregirlos:
     ```
-    $ npm run eslint:fix
+    $ npm run tslint:fix
     ```
 ### Pequeñas reglas a seguir:
 * Código en inglés.
@@ -65,9 +65,9 @@ Adicionalmente utilizamos ```ESlint``` como linter, podremos usar los siguientes
 Luego de haber hecho tus cambios, corre el comando:
 
 ```sh
-$ npm run eslint && npm test
+$ npm run check
 ```
-Y si este se ejecuta sin errores, podrás hacerle push a tu respositorio remoto, y desde github podrás crear el Pull Request a ```jecsham/dev```
+Y si al final del checksum obtienes un ```✔ ALL OK``` al final del output, podrás hacerle push a tu respositorio remoto, y desde github podrás crear el Pull Request a ```jecsham/dev```
 
 ### Integración Continua
 Mientras esperas a que el Pull Request sea aceptado, Travis-CI creará builds con la finalidad de probar que el código funciona, si las builds fallan, no te asustes. Puedes continuar agregando commits al Pull Request hasta que las builds pasen con éxito. Pero lo ideal sería ejecutar el comando anterior para no tener problemas con Travis-CI :p
