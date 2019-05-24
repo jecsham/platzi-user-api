@@ -12,7 +12,7 @@ dotenv.config();
 
 const app = express();
 app.enable("trust proxy");
-app.use(express.static("public"));
+app.use(express.static("build/public"));
 app.use(cors());
 const apiLimiter = new rateLimit({
     handler: (req, res) => {
@@ -29,7 +29,7 @@ const apiLimiter = new rateLimit({
 const cache = apicache.middleware;
 const onlyStatus200 = (req: any, res: any) => res.statusCode === 200;
 const cacheSuccesses = cache("10 minutes", onlyStatus200);
-app.use(favicon(path.join(__dirname, "../public", "assets/favicon.ico")));
+app.use(favicon(path.join(__dirname, "public", "assets/favicon.ico")));
 app.use("/api/", apiLimiter);
 app.use(cacheSuccesses);
 routes(app),
