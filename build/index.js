@@ -15,7 +15,7 @@ const routes_1 = __importDefault(require("./routes"));
 dotenv_1.default.config();
 const app = express_1.default();
 app.enable("trust proxy");
-app.use(express_1.default.static("public"));
+app.use(express_1.default.static("build/public"));
 app.use(cors_1.default());
 const apiLimiter = new express_rate_limit_1.default({
     handler: (req, res) => {
@@ -32,7 +32,7 @@ const apiLimiter = new express_rate_limit_1.default({
 const cache = apicache_1.default.middleware;
 const onlyStatus200 = (req, res) => res.statusCode === 200;
 const cacheSuccesses = cache("10 minutes", onlyStatus200);
-app.use(serve_favicon_1.default(path_1.default.join(__dirname, "../public", "assets/favicon.ico")));
+app.use(serve_favicon_1.default(path_1.default.join(__dirname, "public", "assets/favicon.ico")));
 app.use("/api/", apiLimiter);
 app.use(cacheSuccesses);
 routes_1.default(app),
