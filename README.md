@@ -32,9 +32,13 @@ Una vez hayamos hecho fork del proyecto y lo tengamos clonado e instalado en loc
     MONGODB_URL='mongodb://<url-and-port>/platzi_api_userdata?retryWrites=true'
     ```
     Reemplaza ```<url-and-port>``` por la url y el puerto de la instancia de mongo.
-* Ejecuta el comando:
+* Dentro del directorio, ejecuta el comando:
     ```sh
     $ npm install
+    ```
+* Luego genera la build con el comando:
+    ```sh
+    $ npm run build
     ```
 * Ejectua el comando: 
     ```sh
@@ -81,6 +85,6 @@ Mientras esperas a que el Pull Request sea aceptado, Travis-CI creará builds co
 * [Curso Básico de MongoDB](https://platzi.com/clases/mongodb/)
 
 ## License
-----
+---
 
 MIT
