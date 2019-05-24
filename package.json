@@ -4,6 +4,7 @@
   "description": "Unofficial API RESTful for Platzi user",
   "main": "build/index.js",
   "scripts": {
+    "start:build": "npm run build && npm start",
     "start": "node .",
     "test": "mocha -r ts-node/register src/**/test.ts --timeout 15000 --slow 7000 --exit",
     "test:prod": "mocha build/**/test.js --timeout 15000 --slow 7000 --exit",
