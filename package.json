@@ -41,7 +41,7 @@
     "@types/mocha": "^5.2.6",
     "@types/mongoose": "^5.5.1",
     "@types/node": "^12.0.2",
-    "@types/request-promise": "^4.1.43",
+    "@types/request-promise": "^4.1.44",
     "@types/serve-favicon": "^2.2.30",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.7",
