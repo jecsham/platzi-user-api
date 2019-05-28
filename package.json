@@ -21,7 +21,7 @@
   "author": "Jecsham Castillo",
   "license": "MIT",
   "dependencies": {
-    "apicache": "^1.2.3",
+    "apicache": "^1.4.0",
     "consola": "^2.7.1",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
