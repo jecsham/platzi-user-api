@@ -3,7 +3,7 @@ import consola from "consola";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
-import { RateLimit } from "express-rate-limit";
+import RateLimit from "express-rate-limit";
 import path from "path";
 import favicon from "serve-favicon";
 import routes from "./routes";
@@ -26,7 +26,7 @@ const rateLimitOptions = {
     max: 200,
     windowMs: 1 * 60 * 1000,
 };
-const apiLimiter = RateLimit(rateLimitOptions);
+const apiLimiter = new RateLimit(rateLimitOptions);
 const cache = apicache.middleware;
 const onlyStatus200 = (req: any, res: any) => res.statusCode === 200;
 const cacheSuccesses = cache("10 minutes", onlyStatus200);
