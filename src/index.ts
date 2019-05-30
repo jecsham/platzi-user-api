@@ -3,7 +3,7 @@ import consola from "consola";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
-import { Options, RateLimit } from "express-rate-limit";
+import { RateLimit } from "express-rate-limit";
 import path from "path";
 import favicon from "serve-favicon";
 import routes from "./routes";
@@ -14,7 +14,7 @@ const app = express();
 app.enable("trust proxy");
 app.use(express.static("public"));
 app.use(cors());
-const rateLimitOptions: Options = {
+const rateLimitOptions = {
     handler: (req: any, res: any) => {
         const status = {
             code: 429,
