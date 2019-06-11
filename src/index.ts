@@ -14,7 +14,7 @@ const app = express();
 app.enable("trust proxy");
 app.use(express.static("public"));
 app.use(cors());
-const rateLimitOptions = {
+const rateLimitOptions: RateLimit.Options = {
     handler: (req: any, res: any) => {
         const status = {
             code: 429,
