@@ -18,6 +18,7 @@ db.on("connecting", () => consola_1.default.info("MongoDB Connecting..."));
 db.on("connected", () => consola_1.default.success("MongoDB Connected"));
 // Schema
 const apiV1UserSchema = new mongoose_1.default.Schema({
+    answers: Number,
     avatar: String,
     careers: Array,
     contributions: Array,
