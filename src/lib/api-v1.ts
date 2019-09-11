@@ -47,6 +47,7 @@ export default class ApiV1Ctrl {
                 status.error = false;
                 status.code = 200;
                 userData = {
+                    answers: userDataPlatzi.answers,
                     avatar: userDataPlatzi.avatar,
                     careers: userDataPlatzi.careers.map((obj: any) => {
                         delete obj.slug;
@@ -94,7 +95,6 @@ export default class ApiV1Ctrl {
                     }),
                     name: userDataPlatzi.name,
                     platzi_rank: userDataPlatzi.points,
-                    answers: userDataPlatzi.answers,
                     profile_url: userDataPlatzi.profile_url,
                     socials: userDataPlatzi.socials,
                     username: userDataPlatzi.username,

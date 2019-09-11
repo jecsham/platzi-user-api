@@ -1,4 +1,4 @@
-import ApiV1Ctrl from "../lib/api_v1";
+import ApiV1Ctrl from "../lib/api-v1";
 const API_PATH_V1 = "/api/v1";
 export = (app: any) => {
     // V1

@@ -1,5 +1,5 @@
 import assert from "assert";
-import ApiV1Ctrl from "../lib/api_v1";
+import ApiV1Ctrl from "../lib/api-v1";
 
 describe("API V1", () => {
     describe("#scrapePlatziUser()", () => {
