@@ -47,6 +47,7 @@ export default class ApiV1Ctrl {
                 status.error = false;
                 status.code = 200;
                 userData = {
+                    answers: userDataPlatzi.answers,
                     avatar: userDataPlatzi.avatar,
                     careers: userDataPlatzi.careers.map((obj: any) => {
                         delete obj.slug;
