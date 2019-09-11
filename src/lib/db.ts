@@ -15,6 +15,7 @@ db.on("connected", () => consola.success("MongoDB Connected"));
 
 // Schema
 const apiV1UserSchema = new mongoose.Schema({
+    answers: Number,
     avatar: String,
     careers: Array,
     contributions: Array,
