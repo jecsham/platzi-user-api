@@ -94,6 +94,7 @@ export default class ApiV1Ctrl {
                     }),
                     name: userDataPlatzi.name,
                     platzi_rank: userDataPlatzi.points,
+                    answers: userDataPlatzi.answers,
                     profile_url: userDataPlatzi.profile_url,
                     socials: userDataPlatzi.socials,
                     username: userDataPlatzi.username,
