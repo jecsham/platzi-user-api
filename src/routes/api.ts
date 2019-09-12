@@ -4,6 +4,7 @@ export = (app: any) => {
     // V1
     app.get(`${API_PATH_V1}/getUserSummary/:user`, async (req: any, res: any) => {
         const user = req.params.user;
-        res.send(JSON.stringify(await ApiV1Ctrl.getUserSummary(user), null, 4));
+        const inmediateUpdate = req.query.inmediateUpdate || null;
+        res.send(JSON.stringify(await ApiV1Ctrl.getUserSummary(user, inmediateUpdate ), null, 4));
     });
 };

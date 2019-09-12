@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const assert_1 = __importDefault(require("assert"));
-const api_v1_1 = __importDefault(require("../lib/api_v1"));
+const api_v1_1 = __importDefault(require("../lib/api-v1"));
 describe("API V1", () => {
     describe("#scrapePlatziUser()", () => {
         it("should return \"Jecsham Castillo\" with the param \"@jecsham\"", () => __awaiter(this, void 0, void 0, function* () {
