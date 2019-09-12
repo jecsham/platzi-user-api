@@ -140,7 +140,7 @@ export default class ApiV1Ctrl {
      * @param {String} user - Platzi username
      * @return {Object} - Contain userdata and status
      */
-    public static async getUserSummary(user: string) {
+    public static async getUserSummary(user: string, inmediateUpdate: boolean) {
         const status: any = {};
         const u: string = user.replace("@", "");
         let userData: any = {};
@@ -168,6 +168,8 @@ export default class ApiV1Ctrl {
             if (status.code === 200) {
                 const datenow = new Date();
                 if (this.dateDiffInDays(userData.last_update, datenow) >= this.REQUIRED_DAYS) {
+                    this.scrapePlatziUser(user);
+                } else if (inmediateUpdate) {
                     this.scrapePlatziUser(user);
                 }
             }

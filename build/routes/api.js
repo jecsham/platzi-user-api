@@ -10,12 +10,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-const api_v1_1 = __importDefault(require("../lib/api_v1"));
+const api_v1_1 = __importDefault(require("../lib/api-v1"));
 const API_PATH_V1 = "/api/v1";
 module.exports = (app) => {
     // V1
     app.get(`${API_PATH_V1}/getUserSummary/:user`, (req, res) => __awaiter(this, void 0, void 0, function* () {
         const user = req.params.user;
-        res.send(JSON.stringify(yield api_v1_1.default.getUserSummary(user), null, 4));
+        const inmediateUpdate = req.query.inmediateUpdate || null;
+        res.send(JSON.stringify(yield api_v1_1.default.getUserSummary(user, inmediateUpdate), null, 4));
     }));
 };
