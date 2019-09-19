@@ -5,6 +5,7 @@ export = (app: any) => {
     app.get(`${API_PATH_V1}/getUserSummary/:user`, async (req: any, res: any) => {
         const user = req.params.user;
         const inmediateUpdate = req.query.inmediateUpdate || null;
+        res.set('Content-Type', 'application/json');
         res.send(JSON.stringify(await ApiV1Ctrl.getUserSummary(user, inmediateUpdate ), null, 4));
     });
 };
