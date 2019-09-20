@@ -1,4 +1,4 @@
-import path from "path"
+import path from "path";
 
 export = (app: any) => {
     app.get("/", (req: any, res: any) => {
