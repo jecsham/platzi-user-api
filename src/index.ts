@@ -4,8 +4,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import RateLimit from "express-rate-limit";
-import path from "path";
-import favicon from "serve-favicon";
+// import path from "path";
+// import favicon from "serve-favicon";
 import routes from "./routes";
 
 dotenv.config();
@@ -30,7 +30,7 @@ const apiLimiter = new RateLimit(rateLimitOptions);
 const cache = apicache.middleware;
 const onlyStatus200 = (req: any, res: any) => res.statusCode === 200;
 const cacheSuccesses = cache("10 minutes", onlyStatus200);
-app.use(favicon(path.join(__dirname, "../public", "assets/favicon.ico"), null));
+// app.use(favicon(path.join(__dirname, "../public", "routes/assets/favicon.ico"), null));
 app.use("/api/", apiLimiter);
 app.use(cacheSuccesses);
 routes(app),

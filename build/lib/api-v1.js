@@ -1,9 +1,10 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -185,7 +186,7 @@ class ApiV1Ctrl {
         });
     }
 }
+exports.default = ApiV1Ctrl;
 ApiV1Ctrl.MS_PER_DAY = 1000 * 60 * 60 * 24;
 ApiV1Ctrl.REQUIRED_DAYS = 1;
 ApiV1Ctrl.PLATZI_URL = "https://platzi.com";
-exports.default = ApiV1Ctrl;
