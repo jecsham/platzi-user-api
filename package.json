@@ -8,10 +8,9 @@
     "test": "mocha -r ts-node/register src/**/test.ts --timeout 15000 --slow 7000 --exit",
     "test:prod": "mocha build/**/test.js --timeout 15000 --slow 7000 --exit",
     "dev": "nodemon",
-    "build": "tsc",
     "tslint": "tslint --project ./",
     "tslint:fix": "npm run tslint -- --fix",
-    "check": "bash ./check.sh"
+    "check": "bash ./scripts/check.sh"
   },
   "keywords": [
     "platzi",
