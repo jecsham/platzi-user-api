@@ -30,7 +30,7 @@ const apiLimiter = new RateLimit(rateLimitOptions);
 const cache = apicache.middleware;
 const onlyStatus200 = (req: any, res: any) => res.statusCode === 200;
 const cacheSuccesses = cache("10 minutes", onlyStatus200);
-app.use(favicon(path.join(__dirname, '../public', 'assets', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, "../public", "assets", "favicon.ico")));
 app.use("/api/", apiLimiter);
 app.use(cacheSuccesses);
 routes(app),
