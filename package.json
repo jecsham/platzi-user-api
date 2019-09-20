@@ -2,9 +2,9 @@
   "name": "platzi-user-api",
   "version": "1.2.3",
   "description": "Unofficial API RESTful for Platzi user",
-  "main": "build/index.js",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "node .",
+    "start": "ts-node .",
     "test": "mocha -r ts-node/register src/**/test.ts --timeout 15000 --slow 7000 --exit",
     "test:prod": "mocha build/**/test.js --timeout 15000 --slow 7000 --exit",
     "dev": "nodemon",
