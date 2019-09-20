@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "name": "platzi-user-api",
+    "builds": [{
+        "src": "build/index.js",
+        "use": "@now/node-server"
+    }],
+    "routes": [{
+        "src": "/.*",
+        "dest": "/build/index.js"
+    }],
+    "env": {
+        "MONGODB_URL": "@mongodb"
+    }
+}
