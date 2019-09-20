@@ -8,11 +8,10 @@
     "test": "mocha -r ts-node/register src/**/test.ts --timeout 15000 --slow 7000 --exit",
     "test:prod": "mocha build/**/test.js --timeout 15000 --slow 7000 --exit",
     "dev": "nodemon",
-    "build": "tsc && npm run copy-public",
+    "build": "tsc",
     "tslint": "tslint --project ./",
     "tslint:fix": "npm run tslint -- --fix",
-    "check": "bash ./scripts/check.sh",
-    "copy-public": "node ./scripts/public-to-build.js"
+    "check": "bash ./check.sh"
   },
   "keywords": [
     "platzi",
@@ -44,7 +43,6 @@
     "@types/node": "^12.7.3",
     "@types/request-promise": "^4.1.44",
     "@types/serve-favicon": "^2.2.31",
-    "copy": "^0.3.2",
     "mocha": "^6.2.0",
     "nodemon": "^1.19.1",
     "ts-node": "^8.3.0",
