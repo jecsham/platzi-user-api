@@ -18,6 +18,7 @@ module.exports = (app) => {
     app.get(`${API_PATH_V1}/getUserSummary/:user`, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const user = req.params.user;
         const inmediateUpdate = req.query.inmediateUpdate || null;
+        res.set("Content-Type", "application/json");
         res.send(JSON.stringify(yield api_v1_1.default.getUserSummary(user, inmediateUpdate), null, 4));
     }));
 };
