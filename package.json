@@ -1,18 +1,15 @@
 {
   "name": "platzi-user-api",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "description": "Unofficial API RESTful for Platzi user",
-  "main": "build/index.js",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "node .",
+    "start": "ts-node .",
     "test": "mocha -r ts-node/register src/**/test.ts --timeout 15000 --slow 7000 --exit",
-    "test:prod": "mocha build/**/test.js --timeout 15000 --slow 7000 --exit",
     "dev": "nodemon",
-    "build": "tsc && npm run copy-public",
     "tslint": "tslint --project ./",
     "tslint:fix": "npm run tslint -- --fix",
-    "check": "bash ./scripts/check.sh",
-    "copy-public": "node ./scripts/public-to-build.js"
+    "check": "bash ./scripts/check.sh"
   },
   "keywords": [
     "platzi",
@@ -44,7 +41,6 @@
     "@types/node": "^12.7.3",
     "@types/request-promise": "^4.1.44",
     "@types/serve-favicon": "^2.2.31",
-    "copy": "^0.3.2",
     "mocha": "^6.2.0",
     "nodemon": "^1.19.1",
     "ts-node": "^8.3.0",

@@ -1,5 +1,7 @@
+import path from "path";
+
 export = (app: any) => {
     app.get("/", (req: any, res: any) => {
-        res.sendFile("public/index.html", { root: __dirname });
+        res.sendFile(path.join(__dirname, "../../public", "index.html"));
     });
 };

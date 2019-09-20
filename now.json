@@ -1,15 +1,30 @@
 {
     "version": 2,
-    "name": "platzi-user-api",
-    "builds": [{
-        "src": "build/index.js",
-        "use": "@now/node-server"
-    }],
-    "routes": [{
-        "src": "/.*",
-        "dest": "/build/index.js"
-    }],
     "env": {
         "MONGODB_URL": "@mongodb"
-    }
+    },
+    "builds": [
+        {
+            "src": "public/**",
+            "use": "@now/static"
+        },
+        {
+            "src": "./src/index.ts",
+            "use": "@now/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/public/index.html"
+        },
+        {
+            "src": "/favicon.ico",
+            "dest": "/public/assets/favicon.ico"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/src/index.ts"
+        }
+    ]
 }
