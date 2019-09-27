@@ -71,10 +71,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/express-rate-limit@^3.3.2":
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/@types/express-rate-limit/-/express-rate-limit-3.3.2.tgz#a8450b0c7c5895a2df47ef1c9d996090d0ec61e6"
-  integrity sha512-rLBpN/P/R/SlfoZfBYsrXWwfykxcCUyui3T03nzTJNq+aN6hE0wcME1TsfOb0Vv3TjRNraLqpnwxeRnsd3ATDw==
+"@types/express-rate-limit@^3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@types/express-rate-limit/-/express-rate-limit-3.3.3.tgz#1be5c551be1615d243e3eec14dca091009c61113"
+  integrity sha512-Ys93gQSxRTTvIvUOvGk1dYeHTLqnRfLbZzSu+np6fViL/R3veFyCimMz9bjAWnfzR6InP8LphMnB/p3d7ZkSiQ==
   dependencies:
     "@types/express" "*"
 
