@@ -170,7 +170,11 @@ export default class ApiV1Ctrl {
                 if (this.dateDiffInDays(userData.last_update, datenow) >= this.REQUIRED_DAYS) {
                     this.scrapePlatziUser(user);
                 } else if (inmediateUpdate) {
-                    this.scrapePlatziUser(user);
+                    const content: IData = await this.scrapePlatziUser(user);
+                    userData = content.userData;
+                    status.code = content.status.code;
+                    status.error = content.status.error;
+                    return { status, userData };
                 }
             }
         }
