@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "apicache": "^1.5.2",
-    "consola": "^2.10.1",
+    "consola": "^2.11.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
