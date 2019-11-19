@@ -18,10 +18,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@types/apicache@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@types/apicache/-/apicache-1.2.0.tgz#5f6e9225e66d22da97042a39ad626b3c158d650d"
-  integrity sha512-8uatdizj2GbYHtS4u+x4k2aG1thG6JBWKRidcnauXav+Bxe3bHsWS8HSwcybuLE2q39/95cwb4hkHvqmP7ja2w==
+"@types/apicache@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@types/apicache/-/apicache-1.2.1.tgz#bfab6949a5a0ee748dd8b0ee5cf56b558e3a62e5"
+  integrity sha512-6wIcgkXc66+b+92bJUR+kj3oAX5UMSQu099HEL+2bvMz5FMNIzKA7Z/etloclwn0i/u6ApGKUKa7ZlbdaEt+DA==
   dependencies:
     "@types/redis" "*"
 
