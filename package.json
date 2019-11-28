@@ -43,7 +43,7 @@
     "@types/serve-favicon": "^2.2.31",
     "mocha": "^6.2.2",
     "nodemon": "^2.0.0",
-    "ts-node": "^8.5.2",
+    "ts-node": "^8.5.3",
     "tslint": "^5.20.1",
     "typescript": "^3.7.2"
   }
