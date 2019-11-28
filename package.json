@@ -42,7 +42,7 @@
     "@types/request-promise": "^4.1.45",
     "@types/serve-favicon": "^2.5.0",
     "mocha": "^6.2.2",
-    "nodemon": "^2.0.0",
+    "nodemon": "^2.0.1",
     "ts-node": "^8.5.3",
     "tslint": "^5.20.1",
     "typescript": "^3.7.2"
