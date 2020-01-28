@@ -26,8 +26,7 @@
     "express": "^4.17.1",
     "express-rate-limit": "^5.0.0",
     "mongoose": "^5.8.9",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.5",
+    "node-fetch": "^2.6.0",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
@@ -39,7 +38,7 @@
     "@types/mocha": "^5.2.7",
     "@types/mongoose": "^5.5.43",
     "@types/node": "^13.5.0",
-    "@types/request-promise": "^4.1.45",
+    "@types/node-fetch": "^2.5.4",
     "@types/serve-favicon": "^2.5.0",
     "mocha": "^7.0.1",
     "nodemon": "^2.0.2",

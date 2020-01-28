@@ -1,5 +1,5 @@
-import request from "request-promise";
 import apiV1User from "./db";
+import fetch from "node-fetch";
 
 interface IData {
     status: {
@@ -39,9 +39,11 @@ export default class ApiV1Ctrl {
             error: true,
         };
         let userDataPlatzi;
-        await request({ uri: `${this.PLATZI_URL}/${user}/`, resolveWithFullResponse: true }).then((res) => {
-            let data = res.body.match(/window.data(.|\n)*?};/g);
-            if (data) {
+        try {
+            const res = await fetch(`${this.PLATZI_URL}/${user}/`);
+            const dataBody = await res.text();
+            let data: any = dataBody.match(/window.data(.|\n)*?};/g);
+            if (data && data.length > 0) {
                 data = data[0].replace("window.data =", "").replace("};", "}");
                 userDataPlatzi = JSON.parse(JSON.stringify(eval("(" + data + ")")));
                 status.error = false;
@@ -100,14 +102,18 @@ export default class ApiV1Ctrl {
                     username: userDataPlatzi.username,
                     website: userDataPlatzi.url,
                 };
-            } else {
+            } else if (dataBody.includes("PrivateProfile")) {
                 userData = {};
                 status.error = true;
                 status.code = 403;
+            } else {
+                userData = {};
+                status.error = true;
+                status.code = 404;
             }
-        }).catch(() => {
+        } catch (error) {
             userData = {};
-        });
+        }
         if (status.code === 200) {
             await this.insertOrUpdateUser(userData);
         }
