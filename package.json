@@ -24,8 +24,8 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-rate-limit": "^5.0.0",
-    "mongoose": "^5.8.9",
+    "express-rate-limit": "^5.1.1",
+    "mongoose": "^5.9.6",
     "node-fetch": "^2.6.0",
     "serve-favicon": "^2.5.0"
   },
@@ -33,17 +33,17 @@
     "@types/apicache": "^1.2.2",
     "@types/cors": "^2.8.6",
     "@types/dotenv": "^8.2.0",
-    "@types/express": "^4.17.2",
-    "@types/express-rate-limit": "^3.3.3",
-    "@types/mocha": "^5.2.7",
-    "@types/mongoose": "^5.5.43",
-    "@types/node": "^13.5.0",
-    "@types/node-fetch": "^2.5.4",
+    "@types/express": "^4.17.3",
+    "@types/express-rate-limit": "^5.0.0",
+    "@types/mocha": "^7.0.2",
+    "@types/mongoose": "^5.7.7",
+    "@types/node": "^13.9.4",
+    "@types/node-fetch": "^2.5.5",
     "@types/serve-favicon": "^2.5.0",
-    "mocha": "^7.0.1",
+    "mocha": "^7.1.1",
     "nodemon": "^2.0.2",
-    "ts-node": "^8.6.2",
-    "tslint": "^6.0.0",
-    "typescript": "^3.7.5"
+    "ts-node": "^8.8.1",
+    "tslint": "^6.1.0",
+    "typescript": "^3.8.3"
   }
 }
