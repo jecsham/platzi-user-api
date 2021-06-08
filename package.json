@@ -37,7 +37,7 @@
     "@types/express-rate-limit": "^5.1.1",
     "@types/mocha": "^8.2.2",
     "@types/mongoose": "^5.11.97",
-    "@types/node": "^15.12.1",
+    "@types/node": "^15.12.2",
     "@types/node-fetch": "^2.5.10",
     "@types/serve-favicon": "^2.5.2",
     "mocha": "^8.4.0",
