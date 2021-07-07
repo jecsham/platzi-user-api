@@ -38,7 +38,7 @@
     "@types/mocha": "^8.2.2",
     "@types/mongoose": "^5.11.97",
     "@types/node": "^15.14.0",
-    "@types/node-fetch": "^2.5.10",
+    "@types/node-fetch": "^2.5.11",
     "@types/serve-favicon": "^2.5.3",
     "mocha": "^9.0.2",
     "nodemon": "^2.0.9",
