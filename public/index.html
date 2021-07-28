@@ -1,262 +1,408 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130625337-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-130625337-1"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-        gtag('config', 'UA-130625337-1');
-    </script>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description"
-        content="Obten la lista de tus cursos y carreras aprovadas, aportes, biografía y más. API pública no oficial para la comunidad de Platzi">
-    <!-- Bootstrap CSS -->
-    <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Jecsham CSS -->
-    <link rel="stylesheet" href="/css/jecsham.css">
-    <!-- Material Desing Icons CSS -->
-    <link rel="stylesheet" href="/css/materialdesignicons.min.css">
-    <!-- highlightjs -->
-    <link rel="stylesheet" href="/css/github.css">
-    <script src="/js/lib/highlight.pack.js"></script>
-    <script type="text/javascript" defer>hljs.initHighlightingOnLoad();</script>
-    <title>Platzi User API</title>
-</head>
-<body class="j-bg">
-    <main id="hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <p class="my-5 text-center font-weight-bold display-3 j-title py-5">Platzi User API</p>
-                    <div class="alert alert-warning" role="alert">
-                        <strong>Advertencia:</strong> Este proyecto no es oficial.
-                    </div>
-                    <p>Los datos del usuario son consumidos por primera vez desde platzi.com (la extracción de datos
-                        puede tardar unos segundos), luego son guardados en una
-                        base de datos para que las próximas peticiones se consuman desde ahí. Dichos datos son
-                        actualizados
-                        si han pasado 24 horas desde la última actualización, en la próxima petición del usuario.
-                    </p>
-                    <p>Live example en mi <a href="https://jecsham.com/" target="_blank">página web</a></p>
-                    <h5>Información del servidor</h5>
-                    <p>
+            gtag("config", "UA-130625337-1");
+        </script>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta
+            name="description"
+            content="Obten la lista de tus cursos y carreras aprovadas, aportes, biografía y más. API pública no oficial para la comunidad de Platzi"
+        />
+        <!-- Bootstrap CSS -->
+        <link
+            type="text/css"
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <!-- Jecsham CSS -->
+        <link rel="stylesheet" href="/css/jecsham.css" />
+        <!-- Material Desing Icons CSS -->
+        <link rel="stylesheet" href="/css/materialdesignicons.min.css" />
+        <!-- highlightjs -->
+        <link rel="stylesheet" href="/css/github.css" />
+        <script src="/js/lib/highlight.pack.js"></script>
+        <script type="text/javascript" defer>
+            hljs.initHighlightingOnLoad();
+        </script>
+        <title>Platzi User API</title>
+    </head>
+    <body class="j-bg">
+        <main id="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p
+                            class="
+                                my-5
+                                text-center
+                                font-weight-bold
+                                display-3
+                                j-title
+                                py-5
+                            "
+                        >
+                            Platzi User API
+                        </p>
+                        <div class="alert alert-warning" role="alert">
+                            <strong>Advertencia:</strong> Este proyecto no es
+                            oficial.
+                        </div>
+                        <div class="alert alert-danger" role="alert">
+                            Este proyecto ha llegado a su fin. Ya no es posible
+                            obtener datos del sitio web de platzi desde que
+                            implementaron sistemas de seguridades de cloudflare
+                        </div>
+                        <p>
+                            Los datos del usuario son consumidos por primera vez
+                            desde platzi.com (la extracción de datos puede
+                            tardar unos segundos), luego son guardados en una
+                            base de datos para que las próximas peticiones se
+                            consuman desde ahí. Dichos datos son actualizados si
+                            han pasado 24 horas desde la última actualización,
+                            en la próxima petición del usuario.
+                        </p>
+                        <p>
+                            Live example en mi
+                            <a href="https://jecsham.com/" target="_blank"
+                                >página web</a
+                            >
+                        </p>
+                        <h5>Información del servidor</h5>
+
                         <ul>
                             <li>Límite de 200 peticiones por minuto</li>
                             <li>Caché de 10 minutos</li>
                         </ul>
-                    </p>
-                    <h4>getUserSummary - Obtener datos de usuario</h4>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">GET</span>
+
+                        <h4>getUserSummary - Obtener datos de usuario</h4>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"
+                                    >GET</span
+                                >
+                            </div>
+                            <input
+                                type="text"
+                                class="form-control"
+                                value="/api/v1/getUserSummary/@<username>"
+                                readonly
+                            />
                         </div>
-                        <input type="text" class="form-control" value="/api/v1/getUserSummary/@<username>" readonly>
-                    </div>
-                    <h5>Ejemplo de uso</h5>
-                    <p><code>curl -i https://platzi-user-api.jecsham.com/api/v1/getUserSummary/@jecsham</code></p>
-                    <h5>Respuesta</h5>
-                    <pre>
+                        <h5>Ejemplo de uso</h5>
+                        <p>
+                            <code
+                                >curl -i
+                                https://platzi-user-api.jecsham.com/api/v1/getUserSummary/@jecsham</code
+                            >
+                        </p>
+                        <h5>Respuesta</h5>
+                        <pre>
                     <code class="JSON" id="json-container">
                     </code>
                     </pre>
-                    <section id="data-info">
-                        <h5 class="mb-3">Valores obtenidos de <code>status</code></h5>
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Key</th>
-                                        <th scope="col">Descripción del valor</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>error</td>
-                                        <td>Indica si huvo error en la petición</td>
-                                    </tr>
-                                    <tr>
-                                        <td>code</td>
-                                        <td>Código de estado. <a href="#error-codes">Ver referencia</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <h5 class="mb-3">Valores obtenidos de <code>userData</code> </h5>
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Key</th>
-                                        <th scope="col">Descripción</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>socials</td>
-                                        <td>Redes sociales del usuario. <code>type</code> es la red social,
-                                            <code>id</code>
-                                            es el identificador único del usuario en la red social</td>
-                                    </tr>
-                                    <tr>
-                                        <td>careers</td>
-                                        <td>Carreras aprovadas del usuario. <code>id</code> es el identificador único
-                                            de la
-                                            carrera, <code>title</code> es el nombre de la carrera, <code>logo</code>
-                                            es la URL del logo de la carrera, <code>golden_achievement</code> es la URL
-                                            del icono gold de la carrera, <code>diploma_link</code> es la URL del
-                                            diploma, <code>active</code> indica si la carrera está activa</td>
-                                    </tr>
-                                    <tr>
-                                        <td>courses</td>
-                                        <td>Cursos aprovados del usuario. <code>id</code> es el identificador único del
-                                            curso,
-                                            <code>title</code> es el nombre del curso, <code>badge</code> es
-                                            la URL del logo del curso, <code>url</code> es la URL del curso,
-                                            <code>career</code>
-                                            es el nombre de la carrera principal a la que pertenece el curso,
-                                            <code>diploma_link</code>
-                                            es la URL del
-                                            diploma
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>inactive_courses</td>
-                                        <td>Cursos inactivos/obsoletos aprovados del usuario. <code>id</code> es el
-                                            identificador único del
-                                            curso,
-                                            <code>title</code> es el nombre del curso, <code>badge</code> es
-                                            la URL del logo del curso, <code>url</code> es la URL del curso,
-                                            <code>career</code>
-                                            es el nombre de la carrera principal a la que pertenece el curso,
-                                            <code>diploma_link</code>
-                                            es la URL del
-                                            diploma
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>contributions</td>
-                                        <td>Aportes del usuario. <code>id</code>es el identificador único del aporte,
-                                            <code>title</code> es el nombre del aporte, <code>created_at</code> es la
-                                            fecha de creación del aporte, <code>n_stars</code> es el total de votos del
-                                            aporte, <code>n_responses</code> es el total de comentarios del aporte,
-                                            <code>detail_url</code> es la URL del aporte, <code>course_name</code> es
-                                            el curso donde fue publicado el aporte
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>username</td>
-                                        <td>Nombre de usuario</td>
-                                    </tr>
-                                    <tr>
-                                        <td>avatar</td>
-                                        <td>URL del avatar del usuario</td>
-                                    </tr>
-                                    <tr>
-                                        <td>flag</td>
-                                        <td>URL de la bandera del usuario</td>
-                                    </tr>
-                                    <tr>
-                                        <td>last_update</td>
-                                        <td>Fecha de la última actualización de datos de ese perfil en nuestra base de
-                                            datos</td>
-                                    </tr>
-                                    <tr>
-                                        <td>name</td>
-                                        <td>Nombre del usuario</td>
-                                    </tr>
-                                    <tr>
-                                        <td>platzi_rank</td>
-                                        <td>Puntos de Platzi del usuario</td>
-                                    </tr>
-                                    <tr>
-                                        <td>profile_url</td>
-                                        <td>URL del perfil de Platzi del usuario</td>
-                                    </tr>
-                                    <tr>
-                                        <td>website</td>
-                                        <td>URL de la página web del usuario</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
-                    <section id="error-codes">
-                        <h5 class="mb-3">Códigos de estado</h5>
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Código</th>
-                                        <th scope="col">Error</th>
-                                        <th scope="col">Descripción</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>200</td>
-                                        <td>false</td>
-                                        <td>Petición exitosa</td>
-                                    </tr>
-                                    <tr>
-                                        <td>403</td>
-                                        <td>true</td>
-                                        <td>Perfil privado</td>
-                                    </tr>
-                                    <tr>
-                                        <td>404</td>
-                                        <td>true</td>
-                                        <td>Usuario no encontrado</td>
-                                    </tr>
-                                    <tr>
-                                        <td>429</td>
-                                        <td>true</td>
-                                        <td>Límite de solicitudes excedido (max. 200 por minuto)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>500</td>
-                                        <td>true</td>
-                                        <td>Error interno del servidor</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
-                    <section id="problems">
-                        <h5 class="mb-3">¿Problemas?</h5>
-                        <p><a href="https://twitter.com/jecsham" target="_blank">Tweet me</a> 📢</p>
-                    </section>
-                    <hr>
-                    <section id="footer" class="col-12 my-5 p-0">
-                        <div class="d-flex justify-content-between">
-                            <small class="font-weight-light">¿Te gustaría apoyar el proyecto? <a
-                                    href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XT96C9TPKR8NC&source=url"
-                                    target="_blank">Click
-                                    aquí</a></small>
-                            <small class="font-weight-light"><a href="https://github.com/jecsham/platzi-user-api"
-                                    target="_blank">Source Code</a></small>
-                            <small class="font-weight-light">Creado con 💚 para la comunidad de Platzi</small>
-                        </div>
-                    </section>
+                        <section id="data-info">
+                            <h5 class="mb-3">
+                                Valores obtenidos de <code>status</code>
+                            </h5>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Key</th>
+                                            <th scope="col">
+                                                Descripción del valor
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>error</td>
+                                            <td>
+                                                Indica si huvo error en la
+                                                petición
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>code</td>
+                                            <td>
+                                                Código de estado.
+                                                <a href="#error-codes"
+                                                    >Ver referencia</a
+                                                >
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h5 class="mb-3">
+                                Valores obtenidos de <code>userData</code>
+                            </h5>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Key</th>
+                                            <th scope="col">Descripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>socials</td>
+                                            <td>
+                                                Redes sociales del usuario.
+                                                <code>type</code> es la red
+                                                social,
+                                                <code>id</code>
+                                                es el identificador único del
+                                                usuario en la red social
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>careers</td>
+                                            <td>
+                                                Carreras aprovadas del usuario.
+                                                <code>id</code> es el
+                                                identificador único de la
+                                                carrera, <code>title</code> es
+                                                el nombre de la carrera,
+                                                <code>logo</code> es la URL del
+                                                logo de la carrera,
+                                                <code>golden_achievement</code>
+                                                es la URL del icono gold de la
+                                                carrera,
+                                                <code>diploma_link</code> es la
+                                                URL del diploma,
+                                                <code>active</code> indica si la
+                                                carrera está activa
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>courses</td>
+                                            <td>
+                                                Cursos aprovados del usuario.
+                                                <code>id</code> es el
+                                                identificador único del curso,
+                                                <code>title</code> es el nombre
+                                                del curso, <code>badge</code> es
+                                                la URL del logo del curso,
+                                                <code>url</code> es la URL del
+                                                curso,
+                                                <code>career</code>
+                                                es el nombre de la carrera
+                                                principal a la que pertenece el
+                                                curso,
+                                                <code>diploma_link</code>
+                                                es la URL del diploma
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>inactive_courses</td>
+                                            <td>
+                                                Cursos inactivos/obsoletos
+                                                aprovados del usuario.
+                                                <code>id</code> es el
+                                                identificador único del curso,
+                                                <code>title</code> es el nombre
+                                                del curso, <code>badge</code> es
+                                                la URL del logo del curso,
+                                                <code>url</code> es la URL del
+                                                curso,
+                                                <code>career</code>
+                                                es el nombre de la carrera
+                                                principal a la que pertenece el
+                                                curso,
+                                                <code>diploma_link</code>
+                                                es la URL del diploma
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>contributions</td>
+                                            <td>
+                                                Aportes del usuario.
+                                                <code>id</code>es el
+                                                identificador único del aporte,
+                                                <code>title</code> es el nombre
+                                                del aporte,
+                                                <code>created_at</code> es la
+                                                fecha de creación del aporte,
+                                                <code>n_stars</code> es el total
+                                                de votos del aporte,
+                                                <code>n_responses</code> es el
+                                                total de comentarios del aporte,
+                                                <code>detail_url</code> es la
+                                                URL del aporte,
+                                                <code>course_name</code> es el
+                                                curso donde fue publicado el
+                                                aporte
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>username</td>
+                                            <td>Nombre de usuario</td>
+                                        </tr>
+                                        <tr>
+                                            <td>avatar</td>
+                                            <td>URL del avatar del usuario</td>
+                                        </tr>
+                                        <tr>
+                                            <td>flag</td>
+                                            <td>
+                                                URL de la bandera del usuario
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>last_update</td>
+                                            <td>
+                                                Fecha de la última actualización
+                                                de datos de ese perfil en
+                                                nuestra base de datos
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>name</td>
+                                            <td>Nombre del usuario</td>
+                                        </tr>
+                                        <tr>
+                                            <td>platzi_rank</td>
+                                            <td>
+                                                Puntos de Platzi del usuario
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>profile_url</td>
+                                            <td>
+                                                URL del perfil de Platzi del
+                                                usuario
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>website</td>
+                                            <td>
+                                                URL de la página web del usuario
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                        <section id="error-codes">
+                            <h5 class="mb-3">Códigos de estado</h5>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Código</th>
+                                            <th scope="col">Error</th>
+                                            <th scope="col">Descripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>200</td>
+                                            <td>false</td>
+                                            <td>Petición exitosa</td>
+                                        </tr>
+                                        <tr>
+                                            <td>403</td>
+                                            <td>true</td>
+                                            <td>Perfil privado</td>
+                                        </tr>
+                                        <tr>
+                                            <td>404</td>
+                                            <td>true</td>
+                                            <td>Usuario no encontrado</td>
+                                        </tr>
+                                        <tr>
+                                            <td>429</td>
+                                            <td>true</td>
+                                            <td>
+                                                Límite de solicitudes excedido
+                                                (max. 200 por minuto)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>500</td>
+                                            <td>true</td>
+                                            <td>Error interno del servidor</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                        <section id="problems">
+                            <h5 class="mb-3">¿Problemas?</h5>
+                            <p>
+                                <a
+                                    href="https://twitter.com/jecsham"
+                                    target="_blank"
+                                    >Tweet me</a
+                                >
+                                📢
+                            </p>
+                        </section>
+                        <hr />
+                        <section id="footer" class="col-12 my-5 p-0">
+                            <div class="d-flex justify-content-between">
+                                <small class="font-weight-light"
+                                    >¿Te gustaría apoyar el proyecto?
+                                    <a
+                                        href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XT96C9TPKR8NC&source=url"
+                                        target="_blank"
+                                        >Click aquí</a
+                                    ></small
+                                >
+                                <small class="font-weight-light"
+                                    ><a
+                                        href="https://github.com/jecsham/platzi-user-api"
+                                        target="_blank"
+                                        >Source Code</a
+                                    ></small
+                                >
+                                <small class="font-weight-light"
+                                    >Creado con 💚 para la comunidad de
+                                    Platzi</small
+                                >
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./js/global.js"></script>
-</body>
+        </main>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+        ></script>
+        <script type="text/javascript" src="./js/global.js"></script>
+    </body>
 </html>
